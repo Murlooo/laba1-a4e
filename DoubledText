@@ -1,0 +1,7 @@
+var = input("Your text:")
+for F in var:
+    F = F * 2
+    if F == '  ':
+        F = F.replace("  ", " ")
+    print(F, end="")
+print(" ")
