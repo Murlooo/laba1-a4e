@@ -1,0 +1,18 @@
+numb1 = int(input("Enter the first number: "))
+numb2 = int(input("Enter the second number: "))
+action = input("Select an action (+, -, /, *): ")
+
+if action=="+":
+    print("Result: ", numb1+numb2)
+if action=="-":
+    print("Result: ", numb1-numb2)
+if action == "*" or action == "/" or action == "+" or action == "-":
+    if numb1 and numb2!=0:
+        if action=="*":
+            print("Result: ", numb1*numb2)
+        if action=="/":
+            print("Result: ", numb1/numb2)
+    else:
+        print("One of the number = 0.")
+else:
+    print("Enter the correct symbol (+, -, /, *)")
