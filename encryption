@@ -1,0 +1,26 @@
+##багиии :33
+alphEng = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+alphUa = 'абвгдеєжзиіїйклмнопрстуфхцчшщьюя'
+numbers = '0123456789'
+word = input("Enter the word: ").lower()
+lang = str(input("Enter the language: "))
+enc = ''
+
+for x in word:
+    if lang == "eng":
+        engpos1 = alphEng.find(x)
+        engpos2 = engpos1+1
+        enc += alphEng[engpos2]
+    elif lang == "ua":
+        uapos1 = alphUa.find(x)
+        uapos2 = uapos1+1
+        enc += alphUa[uapos2]
+    else:
+        print("Enter the correct language: eng or ua.")
+        break
+    if x == ' ':
+        enc = enc[:-1]
+        enc += ' '
+    if x == alphEng[-1]:
+        x == alphEng[0]
+print(enc)
