@@ -1,3 +1,4 @@
-var = input("Your text [1]: ")
-print(var[::-1])
-##майже працює
+var1 = input("Your text [1]: ")
+var1 = var1[::-1].split()
+var1 = var1[::-1]
+print(' '.join(var1))
