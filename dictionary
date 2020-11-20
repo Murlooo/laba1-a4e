@@ -1,17 +1,28 @@
-word = input("Type your words: ")
-ignored = "!@#$%^&*().,<>/?|~':;[]{}"
+import collections
+
+word = input("Type your words: ").lower()
+ignored = "!@#$%^&*().,<>/\\?|~':;[]{}\"№+-_=0123456789₴"
 voc = []
 
 word = word.split()
 
 for x in word:
-    for y in x:
-        for z in ignored:
-            if y == z:
-                print("FUCK")
-                x.replace(y, "")
+    for z in ignored:
+        if z in x:
+            x = x.replace(z, "")
     if len(x) > 3:
         voc.append(x)
+
 voc.sort()
-for i in voc:
-    print(i, end="\n")
+
+for x in voc:
+    while voc.count(x) > 1:
+        voc.remove(x)
+
+forSort = "".join(voc)
+c = collections.Counter(forSort)
+for a, b in sorted(c.items()):
+    print('{a}: {b}'.format(a=a, b=b))
+
+for x in voc:
+    print(x, end="\n")
