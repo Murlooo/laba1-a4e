@@ -1,6 +1,7 @@
 import collections
 
 word = input("Type your words: ").lower()
+type = input("Select type of script (A or B): ").lower()
 ignored = "!@#$%^&*().,<>/\\?|~':;[]{}\"№+-_=0123456789₴"
 voc = []
 
@@ -12,17 +13,19 @@ for x in word:
             x = x.replace(z, "")
     if len(x) > 3:
         voc.append(x)
-
 voc.sort()
 
-for x in voc:
-    while voc.count(x) > 1:
-        voc.remove(x)
+if type == "a":
+    for x in voc:
+        print(x, end="\n")
+elif type == "b":
+    for x in voc:
+        while voc.count(x) > 1:
+            voc.remove(x)
+    forSort = "".join(voc)
+    c = collections.Counter(forSort)
 
-forSort = "".join(voc)
-c = collections.Counter(forSort)
-for a, b in sorted(c.items()):
-    print('{a}: {b}'.format(a=a, b=b))
-
-for x in voc:
-    print(x, end="\n")
+    for a, b in sorted(c.items()):
+        print('{a}: {b}'.format(a=a, b=b))
+else:
+    print("Select a correct type (A or B).")
