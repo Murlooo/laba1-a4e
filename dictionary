@@ -15,6 +15,11 @@ for x in word:
         voc.append(x)
 voc.sort()
 
+for x in voc:
+    if voc.index(x) != len(voc)-1:
+        if x == voc[(voc.index(x)+1)]:
+            voc.remove(x)
+
 if type == "a":
     for x in voc:
         print(x, end="\n")
